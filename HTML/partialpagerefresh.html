@@ -1,0 +1,43 @@
+<!-- This only working on a virual server that interprets PHP-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Partial Page Refresh</title>
+    <script>
+      function changeDoc() {
+        var request = new XMLHttpRequest();
+        request.open((method = "POST"), (url = "partial.php"), (async = true));
+        request.send(null);
+        request.onreadystatechange = function() {
+          if (request.readyState == 4 && request.status == 200) {
+            var obj = JSON.parse(request.responseText);
+            document.getElementById("ajax").innerHTML =
+              obj.text1 + "<br>" + obj.button1;
+          }
+        };
+      }
+      function changeDocBack() {
+        var request = new XMLHttpRequest();
+        request.open((method = "POST"), (url = "partial.php"), (async = true));
+        request.send(null);
+        request.onreadystatechange = function() {
+          if (request.readyState == 4 && request.status == 200) {
+            var obj = JSON.parse(request.responseText);
+            document.getElementById("ajax").innerHTML =
+              obj.text2 + "<br>" + obj.button2;
+          }
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <div id="ajax">
+      <h2><em>Change my text using AJAX</em></h2>
+      <button type="button" onclick="changeDoc()">Change Content</button>
+    </div>
+  </body>
+</html>
