@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class floyd
 {
-    public static void floyd(int a[][],int n)
+    public static void Floyds(int a[][],int n)
     {
         int i,j,k;
         int d[][]=new int[10][10];
