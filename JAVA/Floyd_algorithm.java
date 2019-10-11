@@ -51,6 +51,6 @@ public class floyd
         for(i=1;i<=n;i++)
         for(j=1;j<=n;j++)
         a[i][j]=sc.nextInt();
-        floyd(a,n);
+        Floyds(a,n);
     }
 }   
