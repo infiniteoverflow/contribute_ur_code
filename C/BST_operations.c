@@ -75,6 +75,20 @@ int findMax(Node root)
       res = rres;
     return res;
 }
+int height(Node root)
+{
+    int l,r;
+   l=height(root->left);
+   r=height(root->right);
+   if(l>r)
+   {
+       return l+1;
+   }
+   else
+   {
+       return r+1;
+   }
+}
 
 int main()
 {
@@ -82,7 +96,7 @@ int main()
   Node root=NULL;
   while(1)
   {
-    printf("\nEnter your choice\n1:Create BST\n2:Traversal\n3:Search for key\n4:Find Maximum element\n5:Exit");
+    printf("\nEnter your choice\n1:Create BST\n2:Traversal\n3:Search for key\n4:Find Maximum element\n5:height of bst\n6:Exit");
     scanf("%d",&ch);
     switch(ch)
     {
@@ -120,7 +134,10 @@ int main()
               else
               printf("The maximum element is %d\n",temp);
               break;
-      case 5:exit(0);
+      case 5: temp=height(root);
+              printf("The height is %d\n"temp);
+              break;
+      case 6:exit(0);
     }
   }
   return 0;
