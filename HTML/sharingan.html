@@ -1,0 +1,95 @@
+<img id="img-src" src="http://wallpapercave.com/wp/b7kIyfb.jpg" alt="">
+<canvas id="c"></canvas>
+<canvas id="c2"></canvas>
+<style>
+  * {
+  padding: 0;
+  margin: 0;
+}
+canvas {
+  display: block;
+  background: black;
+}
+img {
+  display: none;
+}
+#c2 {
+  display: none;
+}
+</style>
+<script>
+  window.onload = function() {
+(function() {
+  
+  'use strict';
+  
+  var c2 = document.getElementById('c2');
+  var c2ctx = c2.getContext('2d');
+  var imgSrc = document.getElementById('img-src');
+  var c = document.getElementById('c');
+  var ctx = c.getContext('2d');
+  var w = c.width = window.innerWidth;
+  var h = c.height = window.innerHeight;
+  var cx = w / 2;
+  var cy = h / 2;
+  var itr = 2000;
+  var r = -200;
+  var r2 = 0;
+  var ma = Math.PI * 2;
+  var mas = ma / itr;
+  var off = 0;
+  
+  c2.width = w;
+  c2.height = h;
+  
+  c2ctx.drawImage(
+    imgSrc, 
+    cx - imgSrc.width / 2, 
+    cy - imgSrc.height / 2
+  );
+  
+  function draw(ctx, mas, r, s) {
+    for(var i = 0; i < Math.PI * 2; i += mas) {
+      var sx = cx + Math.cos(i + off) * r;
+      var sy = cy + Math.sin(i + off) * r;
+      var tx = Math.floor(sx / s) * s;
+      var ty = Math.floor(sy / s) * s; 
+      ctx.drawImage(
+        c2, 
+        tx, 
+        ty, 
+        s, 
+        s, 
+        tx, 
+        ty, 
+        s, 
+        s
+      );
+    }
+  }
+  
+  requestAnimationFrame(function loop() {
+    
+    requestAnimationFrame(loop);
+    
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fillRect(0, 0, w, h);
+    
+    r += Math.random() * 10;
+    r2 += Math.random() * 10;
+    off += 1;
+    
+    if(r > w) {
+      r = -200;
+    }
+    
+    if(r2 > w) {
+      r2 = 0;
+    }
+    draw(ctx, mas, r, 20, off);
+    draw(ctx, mas, r2, 2, off);
+        
+  });
+})();  
+};
+</script>
