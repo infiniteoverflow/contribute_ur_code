@@ -6,7 +6,7 @@ def main():
     colorama.init()
 
     print(Fore.CYAN)
-    print("This is RED color!!!")
+    print("This is CYAN color!!!")
     print(Style.RESET_ALL)
     print("Now the colors have been reset\n")
 
