@@ -55,6 +55,6 @@ func main() {
 	//fmt.Println(string(personJSON))
 	// Output: [{"name":"name","nickname":"nickname","text":"text"},{"name":"Valéria","nickname":"Valchan","text":"has been here!"}]
 
-	fmt.Println(person[1].Nickname + " " + person[1].Text) //exibe dados do csv
+	fmt.Println(person[1].Nickname + " " + person[1].Text)
 	// Output: Valchan has been here!
 }
