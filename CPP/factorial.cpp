@@ -2,14 +2,23 @@
 
 using namespace std;
 
-int main() {
-	int num,i;
-	long int c=1;
-	cin >> num;										
+void factorial(int num)
+{
+	long int factrl=1;
+	for(int i=1;i<=num;i++)
+	{
+		factrl=factrl*i;
+	}
+	cout << factrl;
+}
+
+int main() 
+{
+	int num;
+	cin >> num;
+	factorial(num);
+	return 0;
+}										
 	
-	
-	for(i=1;i<=num;i++)
-     { c=c*i;
-     }	 cout<<c;}
 	
 	
