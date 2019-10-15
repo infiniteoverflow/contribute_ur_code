@@ -11,6 +11,7 @@ original_array = list(map(int, input_array.split(' ')))
 
 lst_to_multiply = []
 new_lst = []
+
 for i in range(0,len(original_array)):
     if i != 0 and i != len(original_array):
         lst_to_multiply = original_array[0:i] + original_array[i+1:]
