@@ -1,0 +1,8 @@
+
+-->Doubly linked list contains extra pointer called previous pointer together with the next pointer and data which are there in a singly linked list.
+-->Advantage of doubly linked list over singly linked list
+    -A DLL can traverse in both forward and reverse direction.
+    -Delete operation in DLL is more efficient than singly linked list
+-->Disadvantage of doubly linked list over singly linked list
+    -Every node of DLL require extra space for an previous pointer.
+    -All operations require extra pointer to be maintained.
