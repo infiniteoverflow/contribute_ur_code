@@ -25,11 +25,8 @@ void triangle(int n)
         for (int j=0; j<=i; j++ ) 
         { 
             // printing stars 
-            cout << "* "; 
+            cout << "* "<<endl; 
         } 
-  
-        // ending line after each row 
-        cout << endl; 
     } 
 } 
   
