@@ -1,22 +1,19 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 int main()
 {
   int n, i;
-  bool isPrime = true;
-  cout << "Enter a positive integer: ";
+  cout << "Enter a positive integer n : ";
   cin >> n;
-  for(i = 2; i <= n / 2; ++i)
+  for(i = 2; i * i <= n ; i++)
   {
       if(n % i == 0)
       {
-          isPrime = false;
-          break;
+          cout<<" n is not a Prime number" << endl;
+          exit(0);
       }
   }
-  if (isPrime)
-      cout << "This is a prime number";
-  else
-      cout << "This is not a prime number";
+  cout << " n is a Prime number" << endl; 
   return 0;
 }

@@ -1,3 +1,9 @@
 <?php
 
-  echo "Hello World!";
+// Simple PHP file
+
+  $somethingToSay = "Hello World!";
+  
+  echo $somethingToSay;
+
+?>
