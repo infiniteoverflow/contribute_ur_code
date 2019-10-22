@@ -36,29 +36,22 @@ public:
             tail = tail->next;
         }
     }
-    void display()
+
+    node *gethead()
     {
-        node *tmp;
-        tmp = head;
-        cout << "Elements in Node are:" << endl;
-        while (tmp != NULL)
-        {
-            cout << tmp->data << endl;
-            tmp = tmp->next;
-        }
+        return head;
     }
-    void countNode()
+    void display(node *head)
     {
-        node *tmp;
-        tmp = head;
-        int count = 0;
-        while (tmp != NULL)
+        if (head = NULL)
         {
-            cout << tmp->data << endl;
-            tmp = tmp->next;
-            count++;
+            cout << "NULL" << endl;
         }
-        cout << "Total Elements in Node are:" << count << endl;
+        else
+        {
+            cout << head->data << endl;
+            display(head->next);
+        }
     }
 };
 
@@ -68,6 +61,5 @@ int main()
     a.addNode(2);
     a.addNode(3);
     a.display();
-    a.countNode();
     return 0;
 }
