@@ -47,27 +47,45 @@ public:
             tmp = tmp->next;
         }
     }
-    void countNode()
+
+    void concatenate(node *a, node *b)
     {
-        node *tmp;
-        tmp = head;
-        int count = 0;
-        while (tmp != NULL)
+        if (a != NULL && b != NULL)
         {
-            cout << tmp->data << endl;
-            tmp = tmp->next;
-            count++;
+            if (a->next == NULL)
+            {
+                a->next = b;
+            }
         }
-        cout << "Total Elements in Node are:" << count << endl;
+        else
+        {
+            cout << "Either a or b is NULL";
+        }
+    }
+
+    void front(int no)
+    {
+        node *tmp = new node;
+        tmp->data = no;
+        tmp->next = head;
+        head = tmp;
+    }
+
+    void after(node *a, int value)
+    {
+        node *p = new node;
+        p->data = value;
+        p->next = a->next;
+        a->next = p;
     }
 };
 
 int main()
 {
     ll a;
+    a.addNode(1);
     a.addNode(2);
-    a.addNode(3);
+    a.front(0);
     a.display();
-    a.countNode();
     return 0;
 }
