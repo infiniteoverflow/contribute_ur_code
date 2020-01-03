@@ -27,6 +27,7 @@ const getCarModel = (cars) => {
     
 }
 
+
 // Getting all the different car make 
 
 const getCarMake = (inventory) => {
