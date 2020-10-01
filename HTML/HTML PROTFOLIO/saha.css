@@ -1,0 +1,146 @@
+body {
+  background-image: url("https://www.wallpaperflare.com/static/86/28/944/simple-simple-background-primary-colors-minimalism-wallpaper.jpg");
+  background-repeat: no-repeat, repeat;
+  background-color: #cccccc;
+  background-size: cover;
+    height:620px;
+    width: 1341px
+    
+}
+.avatar
+{
+  vertical-align: middle;
+  width: 300px;
+  height:300px;
+  border-radius: 50%;
+  border: 5px solid #78b5dd;
+  border-image: url(border.png) 30 round;
+box-shadow: 0 0 5px 0 #ff0000;
+
+}
+.c1 {
+  width: 5px;
+  background-color:cornflowerblue;
+  height:360px;
+    border-radius: 20%;
+  top: 0;
+margin-left: 8px;
+  float: left;
+font-size: 20px;
+     box-shadow: 0 0 3px 0 red;
+}
+.u1
+{
+    font-family:lucida;
+    font-size:33px;
+    text-align: justify;
+    margin-right:70px;
+    font-style: oblique;
+    color: black
+    
+}
+.p
+{
+    margin-left: 23%;
+    color:none;
+    background-color: transparent
+}
+.raj
+{
+    background-color: aliceblue;
+}
+.c2
+{
+    color:whitesmoke;
+    font-size:25px;
+    font-family: Warnes;
+    float: none;
+    margin-top: 5px;
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px red, 0 0 10px #0073e6, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6;
+
+}
+
+.m{
+  margin: 30px auto;
+    margin-top:35%;
+  text-align: center;
+    font-size: 25px;
+    font-family:lucida;
+    color: aqua;
+}
+.m img{
+    width: 40px;
+    margin: 0 9px;
+    box-shadow: 0 0 10px 0 blue;
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius:50% ;
+}
+.c0
+{
+    height:25px;
+    width:1100px;
+    color:gray;
+    background-color : mediumaquamarine;
+    border-radius:22%;
+    box-shadow: 0 0 3px 0 red;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+    color: azure;
+    word-wrap: break-word;
+      position: -webkit-sticky;
+  position: sticky;
+    top:1px;
+    
+}
+.f1
+{
+    word-wrap: break-word;
+    word-spacing:80px;
+    margin-top:0.5px;
+    font-family: lucida;
+    font-size:20px;
+    text-align: center
+}
+.w1
+{
+    height: 360px;
+     width: 320px;
+    background-color:transparent;
+    float: left;
+}
+
+.w2
+{
+    height:360px;
+    width:1005px;
+    background-color:transparent;
+    float:right;
+        
+}
+b
+{
+    font-size: 31px;
+    color:mediumaquamarine;
+    font-family:serif
+}
+.main
+{
+     background-image: url("https://www.wallpaperflare.com/static/86/28/944/simple-simple-background-primary-colors-minimalism-wallpaper.jpg");
+  background-size: cover;
+}
+
+
+import cv2
+import numpy
+import os
+# Make an array of 120,000 random bytes.
+randomByteArray = bytearray(os.urandom(120000))
+flatNumpyArray = numpy.array(randomByteArray)
+# Convert the array to make a 400x300 grayscale image.
+grayImage = flatNumpyArray.reshape(300, 400)
+cv2.imwrite('RandomGray.png', grayImage)
+# Convert the array to make a 400x100 color image.
+bgrImage = flatNumpyArray.reshape(100, 400, 3)
+cv2.imwrite('RandomColor.png', bgrImage)
