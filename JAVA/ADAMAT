@@ -1,0 +1,71 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int k2 = Integer.parseInt(reader.readLine());
+        for (int k =0 ; k<k2 ; k++)
+        {
+            int n =Integer.parseInt(reader.readLine());
+            int arr[][]=new int[n][n];
+            int[][] arrt =new int[n][n];
+            for(int i = 0; i < n ; i++) {
+                String[] splittedRow = reader.readLine().split(" ");
+                for(int j = 0; j < n; j++) {
+                    arr[i][j] = Integer.parseInt(splittedRow[j]);
+                    arrt[i][j] = Integer.parseInt(splittedRow[j]);
+                }
+            }
+            int[][] arrc = new int[n][n];
+            int i=n-1;
+            int c=0;
+            for(int i2=0; i2 <n; i2++)  
+            {  
+                for(int j = 0; j <n; j++)   
+                {  
+                    arrc[i2][j] =(i2*n)+j+1; 
+                }  
+            }
+            while((!Arrays.equals(arrc,arr)) && i>=0)
+            {
+                if (Arrays.equals(arrc[i],arr[i]))
+                {
+                    i--;
+                }
+                else
+                {
+
+                    for(int i2=0; i2 <=i; i2++)  
+                    {  
+                        for(int j = 0; j <=i; j++)   
+                        {  
+                            arrt[i2][j]=arr[j][i2];
+
+                        }  
+                    }
+                     
+                    for(int i2 = 0; i2 < n; i2++)  
+                    {  
+                        for(int j = 0; j < n; j++)  
+                        {  
+                            arr[i2][j]=arrt[i2][j];  
+                        }  
+
+                    }   
+                    
+                    i--;
+                    c++;
+                }
+            }
+            System.out.println(c);
+        }
+    }
+}
