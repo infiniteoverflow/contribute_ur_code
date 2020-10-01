@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int divisor,dividend,remainder,num1,num2;
+	printf("\n enter two numbers \n ");
+	scanf("\n %d \n %d",&num1,&num2);
+	if(num1>num2)
+	{
+		dividend=num1;
+		divisor=num2;
+	}
+	else 
+	{
+		divisor=num1;
+		dividend=num2;
+	}
+	while(divisor>0)
+	{
+		remainder=dividend%divisor;
+		dividend=divisor;
+		divisor=remainder;
+	}
+	printf("the gcd is %d",dividend);
+	return 0;
+}
