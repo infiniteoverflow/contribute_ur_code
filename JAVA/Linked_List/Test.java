@@ -13,7 +13,6 @@ public class Test {
 		s1.print();
 		s1.add(20);
 		s1.add(30);
-		System.out.println();
 		s1.print();
 		System.out.println();
 		System.out.println(s1.isEmpty());
