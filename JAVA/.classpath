@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="merge_sort/src/|quick_sort/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="merge_sort/src"/>
+	<classpathentry kind="src" path="quick_sort/src"/>
+	<classpathentry kind="output" path="merge_sort/out/production/merge_sort"/>
+</classpath>
